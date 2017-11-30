@@ -1,0 +1,3 @@
+class CustomsAgent:
+    pass
+
