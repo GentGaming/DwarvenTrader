@@ -1,0 +1,2 @@
+class StrongHold:
+    pass
