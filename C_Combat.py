@@ -3,10 +3,9 @@ class Combat:
         pass
     def establishInitiative(self):
         pass
-    def dealDamage(self):
+    def updateCombat(self):
         pass
     def calculateDamage(self):
         pass
     def autoCombat(self):
         pass
-    
