@@ -1,2 +1,5 @@
+from C_Map_Object import Map_Object
 class StrongHold:
-    pass
+    def __init__(self,name):
+        pass
+
