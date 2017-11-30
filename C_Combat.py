@@ -1,11 +1,23 @@
+import random
+
 class Combat:
-    def __init__(combatants):
-        pass
+    def __init__(self,combatants):
+        self.combatants = combatants
     def establishInitiative(self):
-        pass
+        goodguyinitiative = 1
+        badguyinitiative = 2
+        initiativelist = [goodguyinitiative,badguyinitiative]
+        return initiativelist
     def updateCombat(self):
-        pass
+        health=health-damage
+        return health
     def calculateDamage(self):
-        pass
+        i=0
+        damage=0
+        while i < 3:
+            damage+=random.randint(1,6)
+        print(damage)
+        return damage
     def autoCombat(self):
-        pass
+        while health < 15%:
+            flee
