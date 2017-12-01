@@ -1,4 +1,5 @@
 from C_Actor import Actor
 
 class CombatUnit(Actor):
-    pass
+    def __init__(self,name,str,agi,con):
+        super().__init__(name,str,agi,con)
