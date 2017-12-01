@@ -1,3 +1,3 @@
-from C_Actor import Actor
-class Monster(Actor):
+from C_CombatUnit import CombatUnit
+class Monster(CombatUnit):
     pass

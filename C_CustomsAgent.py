@@ -6,16 +6,18 @@ class CustomsAgent:
     def determinePrices(self):
         prices = []
         for good in self.employer.stores:
-            prices.append(good,self.getPriceOfGood(good))
 
-    def getPriceOfGood(self, good):
+            prices.append(good,self.getSellPriceOfGood(good),self.getBuyPriceOfGood())
+        return prices
+    def getSellPriceOfGood(self, good):
+        price = 1
+
+        return price
+
+    def getBuyPriceOfGood(self, good):
         price = 1
 
         return price
     def offerGoods(self):
         goods = self.determinePrices()
         askForItemFromList(goods)
-
-
-
-

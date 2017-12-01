@@ -1,4 +1,4 @@
-from C_Actor import Actor
-class Player(Actor):
+from C_CombatUnit import CombatUnit
+class Player(CombatUnit):
     pass
 
