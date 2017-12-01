@@ -29,6 +29,5 @@ class Combat:
         '''
         the % does not work like this.
         while health < 15%:
-
             flee
         '''
