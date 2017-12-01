@@ -21,3 +21,4 @@ class Combat:
     def autoCombat(self):
         while health < 15%:
             flee
+        else attack
