@@ -26,6 +26,9 @@ class Actor(ListObject):
         self.race = random.randint(1,5)
         if random.randint(1,2) == 1: self.gender = Actor.MALE
         else: self.gender = Actor.FEMALE
+        self.createRandomName()
+        self.name = self.firstName + " " + self.lastName
+
     def createRandomName(self):
         g = self.gender[1]
         r = self.getRaceWord()
@@ -37,9 +40,3 @@ class Actor(ListObject):
     def getRaceWord(self):
         l = ["Human","Orc","Elf","Dwarf","Goblin"]
         return l[self.race-1]
-start_time = time.clock()
-for i in range(10000):
-    test = Actor()
-    test.createRandomName()
-    print(test.firstName+" "+test.lastName+" "+test.getRaceWord())
-print(time.clock() - start_time, "seconds")

@@ -1,10 +1,14 @@
 from C_Actor import Actor
-
+from C_CombatOption import *
 class CombatUnit(Actor):
-    def __init__(self,name,str,agi,con):
-        super().__init__(name,str,agi,con)
+    def __init__(self,name,strength,agi,con):
+        super().__init__()
+        self.strength = strength
+        self.agility = agi
+        self.constitution = con
         self.xPos = 0
         self.yPos = 0
+        self.myLunge = LUNGE
         self.meleeOptionsByRange = [["a","b"], ["c","d"]]
     def getCombatOptionsRelativeToEnemy(self,enemy):
         dx = abs(self.xPos - enemy.xPos)
