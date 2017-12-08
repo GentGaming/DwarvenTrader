@@ -2,7 +2,7 @@ import random
 import time
 from C_ListObject import ListObject
 
-def MakeListFromFile(file):
+def makeListFromFile(file):
     f = open(file, 'r+')
     contents = f.read()
     contents = contents.replace("*","")
@@ -35,8 +35,8 @@ class Actor(ListObject):
         path = "names/"
         fn = path+g+r+"FirstNames.txt"
         ln = path+r+"LastNames.txt"
-        self.firstName = MakeListFromFile(fn)
-        self.lastName = MakeListFromFile(ln)
+        self.firstName = makeListFromFile(fn)
+        self.lastName = makeListFromFile(ln)
     def getRaceWord(self):
         l = ["Human","Orc","Elf","Dwarf","Goblin"]
         return l[self.race-1]
