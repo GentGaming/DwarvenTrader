@@ -10,7 +10,8 @@ class CombatUnit(Actor):
         dx = abs(self.xPos - enemy.xPos)
         dy = abs(self.yPos - enemy.yPos)
         d = min(dx,dy)
-
+        effectiveRange = d - self.weapon.range
+        return CombatUnit.meleeOptionsByRange[effectiveRange+3]
     def addStatus(self,status):
         #can only have one instance of a status
         pass
