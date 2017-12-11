@@ -9,9 +9,12 @@ class Producer(Consumer):
         self.intelligence = 1
         self.mechanicalAptitude = 1
     def produce(self):
+
         for resource in self.resourcesProducing:
-            pass
-            #check that stores holds required resources for production
+            # check that stores holds required resources for production
+            for component in resource.components:
+                if not self.stores.__contains__(component):
+                    self.send("not enough resources")
                 #progress resources in production based on skill and basicProductionSkill
                 #remove resources from store used in production
                 #chance to improve skill
