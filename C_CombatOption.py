@@ -7,7 +7,7 @@ class CombatOption(ListObject):
     CRIPPLED = 4
     WOUNDED = 5
 
-    def __init__(self,name, attack,defense,speedMod = 0, delayMod =0, damageMod = 0,freeMove = False,forwardMove = False, awayMove = False, push = False, pull = False, statusesAdded = [], statusesRemoved = []):
+    def __init__(self,name, attack, defense, speedMod = 0, delayMod =0, damageMod = 0,freeMove = False,forwardMove = False, awayMove = False, push = False, pull = False, statusesAdded = [], statusesRemoved = []):
         self.attackMod = attack
         self.name = name
         self.defenseMod = defense
@@ -23,15 +23,19 @@ class CombatOption(ListObject):
 
 #-2 only self polearm v  opponent grapple
 PUSH = CombatOption("Push",1,1,0,0,0,False,False,False,True)
-BACKSTEP = CombatOption("Backstep",-2,-2,0,0,0,False,False,True)
+BACKRUN = CombatOption("Backstep",-5,-3,0,0,0,False,False,True)
 #-1
-
+BACKATTACK = ("BackAttack",1,-2,0,0,0,False,False,True)
+BACKSTEP = CombatOption("Backstep",-2,-2,0,0,0,False,False,True)
 #0
-
+POWERATTACK = CombatOption("PowerAttack",3,0,0,-3,3)
+GUARD = CombatOption("Guard",0,8,0,0,0)
 #1
-
+BACKATTACK = ("ForwardAttack",1,-2,0,0,0,False,True,False)
+GUARDEDAPPROACH = ("GuardedApproach",-2,-2,0,0,0,False,True,False)
 #2
-
+JUMPINGSWING = ("JumpingSwing",1,-5,0,0,0,False,True,False)
+RUNFORWARDS = ("ForwardRun",-5,-3,0,0,0,False,True,False)
 #3
 #empty because if only lives with three range weapons..
 
