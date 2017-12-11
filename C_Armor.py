@@ -1,4 +1,12 @@
 from C_Equipment import  Equipment
 class Armor(Equipment):
-    def __init__(self,prefix,suffix,armourValue,dodgeValue):
-    super().__init__(prefix,suffix,armourValue,dodgeValue)
+    LIGHT = 1
+    MEDIUM = 2
+    HEAVY = 3
+
+    def __init__(self,prefix,suffix,type,armourValue,dodgeValue):
+        light_type = ["leather", "studded leather", "padded armor"]
+        medium_type = [] # fill in
+        heavy_type = [] # fill in
+        super().__init__()
+
