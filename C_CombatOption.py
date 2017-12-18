@@ -1,16 +1,14 @@
 from C_ListObject import ListObject
 
-DEFAULT_ATTACKS = []
 
 class CombatOption(ListObject):
-    createBasicOptions()
     GRAPPLED = 1
     MENDING = 2
     MAIMED = 3
     CRIPPLED = 4
     WOUNDED = 5
 
-    def __init__(self,name, range, attack, defense, speedMod = 0, delayMod =0, damageMod = 0,freeMove = False,forwardMove = False, awayMove = False, push = False, pull = False, statusesAdded = [], statusesRemoved = []):
+    def __init__(self,name, range, attack, defense, speedMod = 0, delayMod =0, damageMod = 0,freeMove = False,forwardMove = False, awayMove = False, push = False, pull = False, statusesAdded = [WOUNDED], statusesRemoved = []):
         global DEFAULT_ATTACKS
         self.attackMod = attack
         self.range = range
@@ -36,4 +34,8 @@ def createBasicOptions():
     CombatOption("Guarded Approach",1,-2,-2,0,0,0,False,True,False)
     CombatOption("Jumping Swing",2,1,-5,0,0,0,False,True,False)
     CombatOption("Forward Run",2,-5,-3,0,0,0,False,True,False)
+
+DEFAULT_ATTACKS = []
+
+createBasicOptions()
 

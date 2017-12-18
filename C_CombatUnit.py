@@ -1,5 +1,5 @@
 from C_Actor import Actor
-from C_CombatOption import *
+import C_CombatOption
 class CombatUnit(Actor):
     def __init__(self,name,strength,agi,con):
         super().__init__()
@@ -8,16 +8,21 @@ class CombatUnit(Actor):
         self.constitution = con
         self.xPos = 0
         self.yPos = 0
-        self.myLunge = LUNGE
-        self.meleeOptionsByRange = [["a","b"], ["c","d"]]
+        self.equippedWeapon = None
+        self.meleeOptions = C_CombatOption.DEFAULT_ATTACKS
+        self.currentStatuses = []
     def getCombatOptionsRelativeToEnemy(self,enemy):
         dx = abs(self.xPos - enemy.xPos)
         dy = abs(self.yPos - enemy.yPos)
         d = min(dx,dy)
         effectiveRange = d - self.weapon.range
-        return CombatUnit.meleeOptionsByRange[effectiveRange+3]
+        ret = []
+        for o in self.meleeOptions:
+            if o.range == effectiveRange:
+                ret.append(o)
+        return ret
     def addStatus(self,status):
-        #can only have one instance of a status
-        pass
+        if not self.currentStatuses.__contains__(status):
+            self.currentStatuses.append(status)
     def removeStatus(self,status):
-        pass
+        self.currentStatuses.remove(status)
