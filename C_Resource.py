@@ -1,6 +1,6 @@
 from C_ListObject import ListObject
 
-
+RESOURCES = {}
 class Resource(ListObject):
      def __init__(self, name, baseComponents, timeUnitsToProduce, skillsRequiredToProduce, toolsRequiredToProduce, facilitiesRequiredToProduce):
           super().__init__(name)
@@ -9,4 +9,4 @@ class Resource(ListObject):
           self.skillsRequiredToProduce = skillsRequiredToProduce
           self.toolsRequiredToProduce = toolsRequiredToProduce
           self.facilitiesRequiredToProduce = facilitiesRequiredToProduce
-
+          RESOURCES[self.name]=self

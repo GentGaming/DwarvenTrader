@@ -11,7 +11,7 @@ class Consumer(Actor):
         i=0
         while i < 3:
             chosenResource = random.choice(resourceTypes)
-            self.commerceDictionary[chosenResource] = random.randint(1,100),random.randint(1,100),random.randint(1,100)
+            self.commerceDictionary[chosenResource] = 0,random.randint(50,100),random.randint(1,100)
             resourceTypes.remove(chosenResource)
             i+=1
     def update(self):

@@ -1,4 +1,6 @@
 from C_Consumer import Consumer
+from H_Dictionaries import dictionaryAddOrSubtract
+import random
 class Producer(Consumer):
     def __init__(self):
         super().__init__()
@@ -8,6 +10,8 @@ class Producer(Consumer):
         self.basicProductionSkill = 1
         self.intelligence = 1
         self.mechanicalAptitude = 1
+        self.commerceDictionary["Food"] = 300, random.randint(50, 100), random.randint(1, 100)
+
     def produce(self):
 
         for resource in self.resourcesProducing:

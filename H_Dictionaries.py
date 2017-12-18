@@ -16,3 +16,5 @@ def removeFromDictionary(dictionary,name):
 
 
 #make a dictionary with name [stores,want,imoprtance]
+    
+#table = id of owner , resource id, stores, want, importance
